@@ -1,10 +1,9 @@
-import Image from 'next/image'
-import {ThemeSwitcher} from "@/components/ThemeSwitcher";
+import Navbar from '@/components/Navbar'
 
 export default function Home() {
   return (
     <div>
-      <ThemeSwitcher/>
+        <Navbar/>
     </div>
   )
 }
