@@ -12,6 +12,7 @@ const Navbar = () => {
         { path: '/about', title: 'About' },
         { path: '/contact', title: 'Contact' },
     ]
+
     return (
         <div className="bg-purple-800 relative">
             <div
@@ -44,12 +45,11 @@ const Navbar = () => {
             </div>
             <div
                 className={`${toggleButton ? '' : 'hidden'} absolute bg-purple-800 w-full border-t border-black p-8 text-white`}
-
             >
                 <ul className="w-full text-center">
                     {urls.map((url, index) => (
                         <li key={index} className="py-2">
-                            <Link href={url.path}>
+                            <Link href={url.path} onClick={() => setToggleButton(false)}>
                                 {url.title}
                             </Link>
                         </li>
