@@ -64,7 +64,7 @@ const Navbar = () => {
                             >
                                 <ul className="w-full text-center">
                                     {urls.map((url, index) => (
-                                        <li key={index} className="py-2">
+                                        <li key={index} className="py-2 hover:bg-purple-600 rounded-2xl">
                                             <Link href={url.path} onClick={() => setToggleButton(false)}>
                                                 {url.title}
                                             </Link>
