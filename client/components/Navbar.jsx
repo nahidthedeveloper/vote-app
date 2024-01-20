@@ -30,9 +30,9 @@ const Navbar = () => {
     ]
 
     return (
-        <div className="bg-purple-800">
+        <nav className="bg-purple-800 sticky top-0">
             <div
-                className="px-8 md:px-0 py-4 flex items-center justify-between text-white max-w-[1216px] w-full m-auto">
+                className="px-4 md:px-0 py-4 flex items-center justify-between text-white max-w-[1216px] w-full m-auto">
                 <div>
                     <Link href="/">Vote App</Link>
                 </div>
@@ -51,7 +51,7 @@ const Navbar = () => {
                             </li>
                         </ul>
                     </div>
-                    <div className='relative'>
+                    <div className="relative">
                         <div ref={menuRef}>
                             <button
                                 onClick={() => setToggleButton(!toggleButton)}
@@ -64,7 +64,7 @@ const Navbar = () => {
                             >
                                 <ul className="w-full text-center">
                                     {urls.map((url, index) => (
-                                        <li key={index} className="py-2">
+                                        <li key={index} className="py-2 hover:bg-purple-600 rounded-2xl">
                                             <Link href={url.path} onClick={() => setToggleButton(false)}>
                                                 {url.title}
                                             </Link>
@@ -79,7 +79,7 @@ const Navbar = () => {
                     </div>
                 </div>
             </div>
-        </div>
+        </nav>
     )
 }
 
