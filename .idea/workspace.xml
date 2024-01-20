@@ -4,12 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2662917c-453b-47af-aba1-03dbf394d8c9" name="Changes" comment="update navbar">
+    <list default="true" id="2662917c-453b-47af-aba1-03dbf394d8c9" name="Changes" comment="create navbar">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/app/layout.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/app/layout.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/app/login/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/app/login/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/app/page.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/app/page.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/app/signup/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/app/signup/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/components/Navbar.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/components/Navbar.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -21,7 +17,6 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="JSX File" />
-        <option value="JavaScript File" />
       </list>
     </option>
   </component>
@@ -40,22 +35,22 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;last_opened_file_path&quot;: &quot;E:/FullStackProject/vote-app&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;yarn&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;,
-    &quot;ts.external.directory.path&quot;: &quot;C:\\Users\\nahid\\AppData\\Local\\JetBrains\\WebStorm 2023.2.2\\plugins\\javascript-impl\\jsLanguageServicesImpl\\external&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "main",
+    "last_opened_file_path": "E:/FullStackProject/vote-app",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "yarn",
+    "settings.editor.selected.configurable": "preferences.lookFeel",
+    "ts.external.directory.path": "C:\\Users\\nahid\\AppData\\Local\\JetBrains\\WebStorm 2023.2.2\\plugins\\javascript-impl\\jsLanguageServicesImpl\\external",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -84,15 +79,7 @@
       <option name="project" value="LOCAL" />
       <updated>1705590301358</updated>
     </task>
-    <task id="LOCAL-00003" summary="update navbar">
-      <option name="closed" value="true" />
-      <created>1705776902343</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1705776902343</updated>
-    </task>
-    <option name="localTasksCounter" value="4" />
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -100,8 +87,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="create navbar" />
-    <MESSAGE value="complete navbar" />
-    <MESSAGE value="update navbar" />
-    <option name="LAST_COMMIT_MESSAGE" value="update navbar" />
+    <option name="LAST_COMMIT_MESSAGE" value="create navbar" />
   </component>
 </project>
