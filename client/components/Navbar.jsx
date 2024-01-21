@@ -6,7 +6,7 @@ import { ThemeSwitcher } from '@/components/ThemeSwitcher'
 
 const Navbar = () => {
     const [toggleButton, setToggleButton] = useState(false)
-    let menuRef = useRef()
+    const menuRef = useRef()
 
     let handleClickOutside = (e) => {
         if (!menuRef.current?.contains(e.target)) {
@@ -15,7 +15,6 @@ const Navbar = () => {
     }
 
     useEffect(() => {
-        console.log('test')
         document.addEventListener('mousedown', handleClickOutside)
 
         return () => {
@@ -49,6 +48,14 @@ const Navbar = () => {
                             <li className="ml-8">
                                 <ThemeSwitcher />
                             </li>
+                            <li className="ml-16">
+                                <Link href="/auth/login"
+                                      className="text-sm px-4 py-2 rounded hover:bg-purple-700">LOGIN</Link>
+                            </li>
+                            <li className="ml-8">
+                                <Link href="/auth/signup"
+                                      className="bg-white px-4 py-2 rounded text-black hover:bg-indigo-200 text-sm">SIGNUP</Link>
+                            </li>
                         </ul>
                     </div>
                     <div className="relative">
@@ -72,6 +79,17 @@ const Navbar = () => {
                                     ))}
                                     <li className="py-2">
                                         <ThemeSwitcher />
+                                    </li>
+                                    <li className="mt-6">
+                                        <Link
+                                            onClick={() => setToggleButton(false)}
+                                            href="/auth/login"
+                                            className="text-sm px-4 py-2 rounded hover:bg-purple-700">LOGIN</Link>
+                                    </li>
+                                    <li className="mt-6">
+                                        <Link onClick={() => setToggleButton(false)}
+                                              href="/auth/signup"
+                                              className="bg-white px-4 py-2 rounded text-black hover:bg-indigo-200 text-sm">SIGNUP</Link>
                                     </li>
                                 </ul>
                             </div>

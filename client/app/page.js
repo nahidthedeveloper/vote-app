@@ -1,11 +1,12 @@
-import Navbar from '@/components/Navbar'
-import Login from '@/app/login'
-import Signup from '@/app/signup'
 
+export const metadata = {
+    title: 'Vote App | Home',
+    description: 'Created by Nahid Hasan',
+}
 export default function Home() {
   return (
     <div>
-      <Signup/>
+      this is home page
     </div>
   )
 }
