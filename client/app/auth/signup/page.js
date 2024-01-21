@@ -1,6 +1,11 @@
 import React from 'react'
 import Link from 'next/link'
 
+export const metadata = {
+    title: 'Vote App | Signup',
+    description: 'Created by Nahid Hasan',
+}
+
 const Signup = () => {
     return (
         <div className="flex flex-col items-center justify-center px-6 py-8 mx-auto lg:py-0 my-20">
@@ -10,14 +15,23 @@ const Signup = () => {
                     <h1 className="text-xl font-bold leading-tight tracking-tight text-gray-900 md:text-2xl dark:text-white">
                         Create your Account
                     </h1>
-                    <form className="space-y-4 md:space-y-6" action="#">
+                    <form className="space-y-4 md:space-y-6">
                         <div>
                             <label htmlFor="email"
                                    className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Your
-                                email</label>
+                                Email</label>
                             <input type="email" id="email"
                                    className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                                    placeholder="name@company.com"
+                            />
+                        </div>
+                        <div>
+                            <label htmlFor="student-id"
+                                   className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Your
+                                Student ID</label>
+                            <input type="number" id="student-id"
+                                   className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                                   placeholder="01xxxxxxxxx"
                             />
                         </div>
                         <div>
@@ -53,7 +67,7 @@ const Signup = () => {
                             in
                         </button>
                         <p className="text-sm font-light text-gray-500 dark:text-gray-400">
-                            Don’t have an account yet? <Link href="#"
+                            Don’t have an account yet? <Link href="/auth/login"
                                                              className="font-medium text-primary-600 hover:underline dark:text-primary-500">Login</Link>
                         </p>
                     </form>

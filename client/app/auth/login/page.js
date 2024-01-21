@@ -1,6 +1,11 @@
 import React from 'react'
 import Link from 'next/link'
 
+export const metadata = {
+    title: 'Vote App | Login',
+    description: 'Created by Nahid Hasan',
+}
+
 const Login = () => {
     return (
         <div className="flex flex-col items-center justify-center px-6 py-8 mx-auto lg:py-0 my-20">
@@ -10,7 +15,7 @@ const Login = () => {
                     <h1 className="text-xl font-bold leading-tight tracking-tight text-gray-900 md:text-2xl dark:text-white">
                         Sign in to your account
                     </h1>
-                    <form className="space-y-4 md:space-y-6" action="#">
+                    <form className="space-y-4 md:space-y-6">
                         <div>
                             <label htmlFor="email"
                                    className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Your
@@ -48,7 +53,7 @@ const Login = () => {
                             in
                         </button>
                         <p className="text-sm font-light text-gray-500 dark:text-gray-400">
-                            Don’t have an account yet? <Link href="#"
+                            Don’t have an account yet? <Link href="/auth/signup"
                                                              className="font-medium text-primary-600 hover:underline dark:text-primary-500">Sign
                             up</Link>
                         </p>
