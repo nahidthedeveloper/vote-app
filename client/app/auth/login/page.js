@@ -17,6 +17,11 @@ const schema = yup
     })
     .required()
 
+export const metadata = {
+    title: 'Vote App | Login',
+    description: 'Created by Nahid Hasan',
+}
+
 const Login = () => {
     const {
         register,
