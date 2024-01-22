@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="092c6b7e-ffac-4d65-af49-9caa308dc1a2" name="Changes" comment="signup form refactor and unnecessary folder delete">
+      <change beforePath="$PROJECT_DIR$/client/app/auth/login/page.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/app/auth/login/page.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/components/Footer.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/components/Footer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/components/Navbar.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/components/Navbar.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/components/ThemeSwitcher.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/components/ThemeSwitcher.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/components/forms/signupForm.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/components/forms/signupForm.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/components/validators/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/components/validators/index.js" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JavaScript File" />
+      </list>
+    </option>
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "git-widget-placeholder": "main",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "ts.external.directory.path": "C:\\Users\\nahid\\AppData\\Local\\JetBrains\\WebStorm 2023.2.2\\plugins\\javascript-impl\\jsLanguageServicesImpl\\external"
+  }
+}]]></component>
+  <component name="TaskManager">
+    <servers />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="successfully form validation" />
+    <MESSAGE value="signup form refactor and unnecessary folder delete" />
+    <option name="LAST_COMMIT_MESSAGE" value="signup form refactor and unnecessary folder delete" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/client/components/Footer.js</url>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+</project>
