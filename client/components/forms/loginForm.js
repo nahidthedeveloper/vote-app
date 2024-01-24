@@ -4,6 +4,9 @@ import {useForm} from "react-hook-form";
 import {yupResolver} from "@hookform/resolvers/yup";
 import {loginSchema} from "@/components/validators";
 import Link from "next/link";
+import {signIn} from "next-auth/react";
+import {router} from "next/client";
+import {toast} from "react-toastify";
 
 const LoginForm = () => {
     const {
@@ -15,7 +18,31 @@ const LoginForm = () => {
         mode: 'onTouched',
         resolver: yupResolver(loginSchema),
     })
-    const onSubmit = (data) => console.log(data)
+
+    const onSubmit = (data) => {
+        signIn('credentials', {
+            email: data?.email,
+            password: data?.password,
+            redirect: false,
+        }).then((response) => {
+            if (response?.error) {
+                try {
+                    const errors = JSON.parse(response.error)
+                    errors.map((e) => {
+                        return setError(e.name, {
+                            type: 'manual',
+                            message: e.message[0],
+                        })
+                    })
+                } catch (error) {
+                    toast.error('Internal server error!')
+                }
+            } else {
+                toast.success('Login Successful')
+                router.push(callbackUrl ?? '/profile')
+            }
+        })
+    }
 
     return (
         <>

@@ -40,7 +40,7 @@ const Navbar = () => {
                         <ul className="flex">
                             {urls.map((url, index) => (
                                 <li key={index} className="pl-8">
-                                    <Link href={url.path}>
+                                    <Link href={url.path} className='hover:underline'>
                                         {url.title}
                                     </Link>
                                 </li>
@@ -50,8 +50,8 @@ const Navbar = () => {
                             </li>
                             <li className="ml-16">
                                 <Link href="/auth/login"
-                                      className="text-sm px-4 py-2 rounded ">LOGIN</Link>
-                            </li>
+                                      className="text-sm hover:underline">LOGIN</Link>
+                            </li> 
                             <li className="ml-8">
                                 <Link href="/auth/signup"
                                       className="px-4 py-2 rounded text-white bg-purple-600 hover:bg-purple-800 text-sm">SIGNUP</Link>
@@ -71,8 +71,8 @@ const Navbar = () => {
                             >
                                 <ul className="w-full text-center">
                                     {urls.map((url, index) => (
-                                        <li key={index} className="py-2 hover:bg-purple-600 rounded-2xl">
-                                            <Link href={url.path} onClick={() => setToggleButton(false)}>
+                                        <li key={index} className="py-2">
+                                            <Link href={url.path} className='hover:underline' onClick={() => setToggleButton(false)}>
                                                 {url.title}
                                             </Link>
                                         </li>
@@ -84,7 +84,7 @@ const Navbar = () => {
                                         <Link
                                             onClick={() => setToggleButton(false)}
                                             href="/auth/login"
-                                            className="text-sm px-4 py-2 rounded">LOGIN</Link>
+                                            className="text-sm hover:underline">LOGIN</Link>
                                     </li>
                                     <li className="mt-6">
                                         <Link onClick={() => setToggleButton(false)}
