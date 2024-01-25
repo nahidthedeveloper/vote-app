@@ -3,8 +3,10 @@ import Link from 'next/link'
 import { useForm } from 'react-hook-form'
 import { yupResolver } from '@hookform/resolvers/yup'
 import { signupSchema } from '@/components/validators'
+import { useState } from 'react'
 
 const SignupForm = () => {
+    const [isChecked, setIsChecked] = useState(false)
 
     const {
         register,
@@ -67,9 +69,11 @@ const SignupForm = () => {
                 </div>
                 <div className="flex items-start">
                     <div className="flex items-center h-5">
-                        <input id="terms" aria-describedby="terms" type="checkbox"
+                        <input id="terms"  type="checkbox"
+                               checked={isChecked}
+                               onChange={(e)=> setIsChecked(e.target.checked)}
                                className="w-4 h-4 border border-gray-300 rounded bg-gray-50 focus:ring-3 focus:ring-primary-300 dark:bg-gray-700 dark:border-gray-600 dark:focus:ring-primary-600 dark:ring-offset-gray-800"
-                               required="" />
+                                />
                     </div>
                     <div className="ml-3 text-sm">
                         <label htmlFor="terms" className="font-light text-gray-500 dark:text-gray-300">I accept
@@ -79,6 +83,7 @@ const SignupForm = () => {
                     </div>
                 </div>
                 <button type="submit"
+                        disabled={!isChecked}
                         className="w-full text-white bg-purple-600  focus:ring-4 focus:outline-none font-medium rounded-lg text-sm px-5 py-2.5 text-center hover:bg-purple-800">Sign
                     in
                 </button>
