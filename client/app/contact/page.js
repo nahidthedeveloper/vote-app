@@ -6,9 +6,9 @@ export const metadata = {
 }
 const Page = () => {
     return (
-        <div className="max-w-7xl mx-auto py-16 lg:py-20 ">
+        <div className="mx-auto py-10">
             <div className="max-w-2xl lg:max-w-4xl mx-auto text-center">
-                <h2 className="mb-4 text-4xl tracking-tight font-extrabold text-center text-gray-900 dark:text-white">Contact
+                <h2 className="mb-2 text-4xl tracking-tight font-extrabold text-center text-gray-900 dark:text-white">Contact
                     Us</h2>
                 <p className="mb-8 lg:mb-16 font-light text-center text-gray-500 dark:text-gray-400 sm:text-xl">
                     We use an agile approach to test assumptions and connect with the needs of your audience early and
