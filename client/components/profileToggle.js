@@ -37,11 +37,11 @@ const ProfileToggle = ({ user }) => {
                 </button>
 
                 <div
-                    className={`${isOpen ? '' : 'hidden'} absolute top-6 right-0 z-50 my-4 text-base list-none bg-white divide-y divide-gray-100 rounded-lg shadow dark:bg-gray-700 dark:divide-gray-600`}
+                    className={`${isOpen ? '' : 'hidden'} absolute text-center top-6 right-0 z-50 my-4 text-base list-none bg-white divide-y divide-gray-100 rounded-lg shadow dark:bg-gray-700 dark:divide-gray-600 min-w-[200px]`}
                 >
                     <div className="px-4 py-3">
                         <span className="block text-sm  text-gray-500 truncate dark:text-gray-400">
-                            {user}
+                            {user ? user : 'example@company.com'}
                         </span>
                     </div>
                     <ul className="py-2">
@@ -55,8 +55,8 @@ const ProfileToggle = ({ user }) => {
                             </Link>
                         </li>
                         <li
-                            onClick={() => signOut()}
-                            className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white"
+                            // onClick={() => signOut()}
+                            className="block px-4 py-2 cursor-pointer text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white"
                         >
                             Logout
                         </li>
