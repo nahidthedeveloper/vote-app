@@ -1,13 +1,13 @@
 'use client'
-import { createContext, useEffect, useState } from 'react'
-import { httpClient } from '@/utils/api'
-import { useSession } from 'next-auth/react'
+import {createContext, useEffect, useState} from 'react'
+import {httpClient} from '@/utils/api'
+import {useSession} from 'next-auth/react'
 
 export const TokenContext = createContext('undefined')
 
-export const TokenProvider = ({ children }) => {
+export const TokenProvider = ({children}) => {
     const [tokenStatus, setTokenStatus] = useState('undefined')
-    const { data: session } = useSession()
+    const {data: session} = useSession()
 
     useEffect(() => {
         if (session) {

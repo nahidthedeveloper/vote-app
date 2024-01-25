@@ -17,7 +17,7 @@ const Page = () => {
             </div>
             <div className="mt-10 lg:mt-16">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                    <div className="rounded-lg overflow-hidden">
+                    <div className="rounded-lg overflow-hidden border border-gray-200 shadow">
                         <iframe
                             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3618.286398521705!2d89.34645097604827!3d24.922311542778658!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39fcff6dad46983f%3A0x32606b40b622acdb!2sPundra%20University%20of%20Science%20and%20Technology%20(PUB)!5e0!3m2!1sen!2sbd!4v1705867770982!5m2!1sen!2sbd"
                             width="100%"
