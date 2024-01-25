@@ -1,4 +1,5 @@
 import React from 'react'
+
 import Question from '@/components/Question'
 
 const Event = ({ params }) => {
@@ -8,6 +9,7 @@ const Event = ({ params }) => {
             <Question id={id} />
             <Question id={id} />
         </div>)
+
 }
 
 export default Event
