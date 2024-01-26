@@ -1,24 +1,28 @@
 import NextAuth from 'next-auth'
 import CredentialsProvider from 'next-auth/providers/credentials'
-import {objectToArray, } from '@/utils'
-import {httpClient} from '@/utils/api'
+import { objectToArray } from '@/utils'
+import { httpClient } from '@/utils/api'
+import axios from 'axios'
 
 export default NextAuth({
     providers: [
         CredentialsProvider({
             name: 'credentials',
             credentials: {},
-            async authorize({email, password}) {
+            async authorize({ email, password }) {
                 const payload = {
                     email,
                     password,
                 }
                 try {
-                    const {data} = await httpClient.post(`/login/`, payload)
+                    const { data } = await axios.post(
+                        `/auth/login/`,
+                        payload
+                    )
                     return data
                 } catch (error) {
                     if ('response' in error) {
-                        const {data: errors} = error.response
+                        const { data: errors } = error.response
                         const formattedData = objectToArray(errors)
                         throw new Error(JSON.stringify(formattedData))
                     }
@@ -27,16 +31,17 @@ export default NextAuth({
         }),
     ],
     callbacks: {
-        async jwt({token, user}) {
+        async jwt({ token, user }) {
             if (user) {
+                console.log(user)
                 return {
                     ...token,
-                    accessToken: user?.token.access,
+                    accessToken: user?.token,
                 }
             }
             return token
         },
-        async session({session, token}) {
+        async session({ session, token }) {
             session.user.accessToken = token?.accessToken
             return session
         },

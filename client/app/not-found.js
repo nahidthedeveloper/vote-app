@@ -1,10 +1,14 @@
 import React from 'react'
 import Link from 'next/link'
 
+export const metadata = {
+    title: 'Vote App | Not Found',
+    description: 'Created by Nahid Hasan',
+}
+
 export default function Custom404() {
     return (
-        <div
-            className="w-full mt-28 flex flex-col lg:flex-row items-center justify-center space-y-16 lg:space-y-0 space-x-8 2xl:space-x-0">
+        <div className="w-full mt-28 flex flex-col lg:flex-row items-center justify-center space-y-16 lg:space-y-0 space-x-8 2xl:space-x-0">
             <div className="w-full lg:w-1/2 flex flex-col items-center justify-center lg:px-2 xl:px-0 text-center">
                 <p className="text-7xl md:text-8xl lg:text-9xl font-bold tracking-wider text-gray-300">
                     404
@@ -91,7 +95,12 @@ export default function Custom404() {
                         ry="10.96996"
                         fill="#3f3d56"
                     />
-                    <circle cx="97.08375" cy="566.26982" r={79} fill="#2f2e41" />
+                    <circle
+                        cx="97.08375"
+                        cy="566.26982"
+                        r={79}
+                        fill="#2f2e41"
+                    />
                     <rect
                         x="99.80546"
                         y="689.02332"
@@ -141,7 +150,12 @@ export default function Custom404() {
                         transform="translate(-39.70387 -61.04208)"
                         fill="#3f3d56"
                     />
-                    <circle cx="712.48505" cy="565.41532" r={79} fill="#2f2e41" />
+                    <circle
+                        cx="712.48505"
+                        cy="565.41532"
+                        r={79}
+                        fill="#2f2e41"
+                    />
                     <rect
                         x="741.77716"
                         y="691.82355"
@@ -175,7 +189,12 @@ export default function Custom404() {
                         fill="#2f2e41"
                     />
                     <circle cx="708.52153" cy="545.71023" r={27} fill="#fff" />
-                    <circle cx="708.52153" cy="545.71023" r={9} fill="#3f3d56" />
+                    <circle
+                        cx="708.52153"
+                        cy="545.71023"
+                        r={9}
+                        fill="#3f3d56"
+                    />
                     <path
                         d="M657.35526,578.74316c-14.48957-25.43323-3.47841-59.016,24.59412-75.0092s62.57592-8.34055,77.06549,17.09268-2.39072,41.6435-30.46325,57.63671S671.84483,604.17639,657.35526,578.74316Z"
                         transform="translate(-39.70387 -61.04208)"
@@ -220,6 +239,5 @@ export default function Custom404() {
                 </svg>
             </div>
         </div>
-
     )
 }

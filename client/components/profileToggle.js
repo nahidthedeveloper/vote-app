@@ -1,5 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react'
 import Link from 'next/link'
+import { signOut } from 'next-auth/react'
 
 const ProfileToggle = ({ user }) => {
     const [isOpen, setIsOpen] = useState(false)
@@ -54,7 +55,7 @@ const ProfileToggle = ({ user }) => {
                             </Link>
                         </li>
                         <li
-                            // onClick={() => signOut()}
+                            onClick={() => signOut()}
                             className="block px-4 py-2 cursor-pointer text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white"
                         >
                             Logout

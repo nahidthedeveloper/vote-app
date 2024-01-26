@@ -10,15 +10,16 @@ module.exports = {
     ],
     theme: {
         fontFamily: {
-            'Russo': ["Russo One", "sans-serif"],
-            'rubik-scribble': ["Rubik Scribble", "system-ui"],
-            'rubik-mono': ["Rubik Mono One", "monospace"],
+            Russo: ['Russo One', 'sans-serif'],
+            'rubik-scribble': ['Rubik Scribble', 'system-ui'],
+            'rubik-mono': ['Rubik Mono One', 'monospace'],
         },
         extend: {
             backgroundImage: {
-                'background-image': "url('https://thumbs.dreamstime.com/z/vote-background-25501275.jpg?ct=jpeg')",
-            }
-        }
+                'background-image':
+                    "url('https://thumbs.dreamstime.com/z/vote-background-25501275.jpg?ct=jpeg')",
+            },
+        },
     },
     darkMode: 'class',
     plugins: [],

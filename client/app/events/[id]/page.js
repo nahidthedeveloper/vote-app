@@ -1,13 +1,14 @@
 import React from 'react'
-import Question from '@/components/Question'
+import EventChildApi from '@/app/api/EventChildApi'
+
+export const metadata = {
+    title: 'Vote App | Event',
+    description: 'Created by Nahid Hasan',
+}
 
 const Event = ({ params }) => {
     const { id } = params
-    return (
-        <div className="my-10 grid gap-16">
-            <Question id={id} />
-            <Question id={id} />
-        </div>)
+    return <EventChildApi params={id} />
 }
 
 export default Event

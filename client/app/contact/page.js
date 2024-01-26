@@ -8,11 +8,12 @@ const Page = () => {
     return (
         <div className="mx-auto py-10">
             <div className="max-w-2xl lg:max-w-4xl mx-auto text-center">
-                <h2 className="mb-2 text-4xl tracking-tight font-extrabold text-center text-gray-900 dark:text-white">Contact
-                    Us</h2>
+                <h2 className="mb-2 text-4xl tracking-tight font-extrabold text-center text-gray-900 dark:text-white">
+                    Contact Us
+                </h2>
                 <p className="mb-8 lg:mb-16 font-light text-center text-gray-500 dark:text-gray-400 sm:text-xl">
-                    We use an agile approach to test assumptions and connect with the needs of your audience early and
-                    often.
+                    We use an agile approach to test assumptions and connect
+                    with the needs of your audience early and often.
                 </p>
             </div>
             <div className="mt-10 lg:mt-16">
@@ -30,19 +31,23 @@ const Page = () => {
                     <div>
                         <div className="max-w-full mx-auto rounded-lg overflow-hidden text-gray-500 dark:text-gray-400">
                             <div className="px-6 py-4">
-                                <h3 className="text-lg font-medium">Our Address</h3>
-                                <p className="mt-1">
-                                    Rangpur Rd, Gokul
-                                </p>
+                                <h3 className="text-lg font-medium">
+                                    Our Address
+                                </h3>
+                                <p className="mt-1">Rangpur Rd, Gokul</p>
                             </div>
                             <div className="border-t border-gray-200 px-6 py-4">
                                 <h3 className="text-lg font-medium">Hours</h3>
-                                <p className="mt-1">Monday - Friday: 9am - 5pm</p>
+                                <p className="mt-1">
+                                    Monday - Friday: 9am - 5pm
+                                </p>
                                 <p className="mt-1">Saturday: 10am - 4pm</p>
                                 <p className="mt-1">Sunday: Closed</p>
                             </div>
                             <div className="border-t border-gray-200 px-6 py-4">
-                                <h3 className="text-lg font-medium ">Contact</h3>
+                                <h3 className="text-lg font-medium ">
+                                    Contact
+                                </h3>
                                 <p className="mt-1">Email: info@example.com</p>
                                 <p className="mt-1">Phone: +1 23494 34993</p>
                             </div>

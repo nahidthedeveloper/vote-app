@@ -31,17 +31,21 @@ const Navbar = () => {
 
     return (
         <nav className="bg-white dark:bg-gray-900 sticky top-0 z-50 border-b border-gray-200 dark:border-gray-700">
-            <div
-                className="px-4 md:px-0 py-8 flex items-center justify-between dark:text-white text-black max-w-[1216px] w-full m-auto">
+            <div className="px-4 md:px-0 py-8 flex items-center justify-between dark:text-white text-black max-w-[1216px] w-full m-auto">
                 <div>
-                    <Link href="/">Vote App</Link>
+                    <Link href="/" className="font-Russo text-2xl">
+                        Vote App
+                    </Link>
                 </div>
                 <div className="flex">
                     <div className="hidden md:block">
                         <ul className="flex">
                             {urls.map((url, index) => (
                                 <li key={index} className="pl-8">
-                                    <Link href={url.path} className="hover:underline">
+                                    <Link
+                                        href={url.path}
+                                        className="hover:underline"
+                                    >
                                         {url.title}
                                     </Link>
                                 </li>
@@ -53,12 +57,20 @@ const Navbar = () => {
                                 <ProfileToggle />
                             </li>
                             <li className="ml-16">
-                                <Link href="/auth/login"
-                                      className="text-sm hover:underline">LOGIN</Link>
+                                <Link
+                                    href="/auth/login"
+                                    className="text-sm hover:underline"
+                                >
+                                    LOGIN
+                                </Link>
                             </li>
                             <li className="ml-8">
-                                <Link href="/auth/signup"
-                                      className="px-4 py-2 rounded text-white bg-purple-600 hover:bg-purple-800 text-sm">SIGNUP</Link>
+                                <Link
+                                    href="/auth/signup"
+                                    className="px-4 py-2 rounded text-white bg-purple-600 hover:bg-purple-800 text-sm"
+                                >
+                                    SIGNUP
+                                </Link>
                             </li>
                         </ul>
                     </div>
@@ -76,8 +88,13 @@ const Navbar = () => {
                                 <ul className="w-full text-center">
                                     {urls.map((url, index) => (
                                         <li key={index} className="py-2">
-                                            <Link href={url.path} className="hover:underline"
-                                                  onClick={() => setToggleButton(false)}>
+                                            <Link
+                                                href={url.path}
+                                                className="hover:underline"
+                                                onClick={() =>
+                                                    setToggleButton(false)
+                                                }
+                                            >
                                                 {url.title}
                                             </Link>
                                         </li>
@@ -90,14 +107,25 @@ const Navbar = () => {
                                     </li>
                                     <li className="mt-6">
                                         <Link
-                                            onClick={() => setToggleButton(false)}
+                                            onClick={() =>
+                                                setToggleButton(false)
+                                            }
                                             href="/auth/login"
-                                            className="text-sm hover:underline">LOGIN</Link>
+                                            className="text-sm hover:underline"
+                                        >
+                                            LOGIN
+                                        </Link>
                                     </li>
                                     <li className="mt-6">
-                                        <Link onClick={() => setToggleButton(false)}
-                                              href="/auth/signup"
-                                              className="px-4 py-2 rounded text-white bg-purple-600 hover:bg-purple-800 text-sm">SIGNUP</Link>
+                                        <Link
+                                            onClick={() =>
+                                                setToggleButton(false)
+                                            }
+                                            href="/auth/signup"
+                                            className="px-4 py-2 rounded text-white bg-purple-600 hover:bg-purple-800 text-sm"
+                                        >
+                                            SIGNUP
+                                        </Link>
                                     </li>
                                 </ul>
                             </div>
