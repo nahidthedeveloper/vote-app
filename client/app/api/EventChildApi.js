@@ -1,12 +1,11 @@
 'use client'
-import React, { useContext, useEffect, useState } from 'react'
-import { TokenContext } from '@/context/tokenContext'
+import React, { useEffect, useState } from 'react'
 import { httpClient } from '@/utils/api'
 import Question from '@/components/Question'
+import { toast } from 'react-toastify'
 
 const EventChildApi = ({ params }) => {
     const [loading, setLoading] = useState(true)
-    const tokenStatus = useContext(TokenContext)
     const [event, setEvent] = useState([])
     const { questions } = event
 
@@ -18,9 +17,11 @@ const EventChildApi = ({ params }) => {
                 setLoading(false)
             })
             .catch((err) => {
-                console.log(err)
+                if (err) {
+                    toast.error(err.message)
+                }
             })
-    }, [tokenStatus])
+    }, [])
 
     return (
         <>

@@ -3,11 +3,11 @@ import React, { useContext, useEffect, useState } from 'react'
 import { TokenContext } from '@/context/tokenContext'
 import { httpClient } from '@/utils/api'
 import EventCard from '@/components/EventCard'
+import { toast } from 'react-toastify'
 
 const EventApi = () => {
     const [events, setEvents] = useState([])
     const [loading, setLoading] = useState(true)
-    const tokenStatus = useContext(TokenContext)
 
     useEffect(() => {
         httpClient
@@ -17,9 +17,11 @@ const EventApi = () => {
                 setLoading(false)
             })
             .catch((err) => {
-                console.log(err)
+                if(err){
+                    toast.error(err.message)
+                }
             })
-    }, [tokenStatus])
+    }, [])
 
     return (
         <>
