@@ -43,7 +43,7 @@ const LoginForm = () => {
                 }
             } else {
                 toast.success('Login Successful')
-                // router.push(callbackUrl ?? '/profile')
+                router.push(callbackUrl ?? '/profile')
             }
         })
     }
@@ -92,7 +92,7 @@ const LoginForm = () => {
                 </div>
                 <div className="flex items-center">
                     <Link
-                        href="#"
+                        href="/auth/forgot_password/"
                         className="text-sm font-medium text-primary-600 hover:underline dark:text-primary-500"
                     >
                         Forgot password?

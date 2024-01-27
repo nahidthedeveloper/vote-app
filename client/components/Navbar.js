@@ -4,10 +4,15 @@ import Link from 'next/link'
 import { Bars3CenterLeftIcon } from '@heroicons/react/24/solid'
 import { ThemeSwitcher } from '@/components/ThemeSwitcher'
 import ProfileToggle from '@/components/profileToggle'
+import { useSession } from 'next-auth/react'
+import { usePathname } from 'next/navigation'
 
 const Navbar = () => {
     const [toggleButton, setToggleButton] = useState(false)
     const menuRef = useRef()
+    const { data, status } = useSession()
+    const user = data?.user.email
+    const pathname = usePathname()
 
     let handleClickOutside = (e) => {
         if (!menuRef.current?.contains(e.target)) {
@@ -31,7 +36,8 @@ const Navbar = () => {
 
     return (
         <nav className="bg-white dark:bg-gray-900 sticky top-0 z-50 border-b border-gray-200 dark:border-gray-700">
-            <div className="px-4 md:px-0 py-8 flex items-center justify-between dark:text-white text-black max-w-[1216px] w-full m-auto">
+            <div
+                className="px-4 md:px-0 py-8 flex items-center justify-between dark:text-white text-black max-w-[1216px] w-full m-auto">
                 <div>
                     <Link href="/" className="font-Russo text-2xl">
                         Vote App
@@ -44,7 +50,7 @@ const Navbar = () => {
                                 <li key={index} className="pl-8">
                                     <Link
                                         href={url.path}
-                                        className="hover:underline"
+                                        className={`${pathname === url.path ? 'border-b pb-1 border-black dark:border-white' : ''} hover:text-gray-400`}
                                     >
                                         {url.title}
                                     </Link>
@@ -53,25 +59,30 @@ const Navbar = () => {
                             <li className="ml-8">
                                 <ThemeSwitcher />
                             </li>
-                            <li className="ml-16">
-                                <ProfileToggle />
-                            </li>
-                            <li className="ml-16">
-                                <Link
-                                    href="/auth/login"
-                                    className="text-sm hover:underline"
-                                >
-                                    LOGIN
-                                </Link>
-                            </li>
-                            <li className="ml-8">
-                                <Link
-                                    href="/auth/signup"
-                                    className="px-4 py-2 rounded text-white bg-purple-600 hover:bg-purple-800 text-sm"
-                                >
-                                    SIGNUP
-                                </Link>
-                            </li>
+                            {(status === 'authenticated' && user) ? (
+                                <li className="ml-16">
+                                    <ProfileToggle user={user} />
+                                </li>
+                            ) : (
+                                <>
+                                    <li className="ml-16">
+                                        <Link
+                                            href="/auth/login"
+                                            className="text-sm hover:underline"
+                                        >
+                                            LOGIN
+                                        </Link>
+                                    </li>
+                                    <li className="ml-8">
+                                        <Link
+                                            href="/auth/signup"
+                                            className="px-4 py-2 rounded text-white bg-purple-600 hover:bg-purple-800 text-sm"
+                                        >
+                                            SIGNUP
+                                        </Link>
+                                    </li>
+                                </>
+                            )}
                         </ul>
                     </div>
                     <div className="relative">
@@ -90,7 +101,7 @@ const Navbar = () => {
                                         <li key={index} className="py-2">
                                             <Link
                                                 href={url.path}
-                                                className="hover:underline"
+                                                className={`${pathname === url.path ? 'border-b pb-1 border-black dark:border-white' : ''} hover:text-gray-400`}
                                                 onClick={() =>
                                                     setToggleButton(false)
                                                 }
@@ -102,31 +113,36 @@ const Navbar = () => {
                                     <li className="py-2">
                                         <ThemeSwitcher />
                                     </li>
-                                    <li className="mt-6 flex justify-center">
-                                        <ProfileToggle />
-                                    </li>
-                                    <li className="mt-6">
-                                        <Link
-                                            onClick={() =>
-                                                setToggleButton(false)
-                                            }
-                                            href="/auth/login"
-                                            className="text-sm hover:underline"
-                                        >
-                                            LOGIN
-                                        </Link>
-                                    </li>
-                                    <li className="mt-6">
-                                        <Link
-                                            onClick={() =>
-                                                setToggleButton(false)
-                                            }
-                                            href="/auth/signup"
-                                            className="px-4 py-2 rounded text-white bg-purple-600 hover:bg-purple-800 text-sm"
-                                        >
-                                            SIGNUP
-                                        </Link>
-                                    </li>
+                                    {status === 'authenticated' ? (
+                                        <li className="mt-6 flex justify-center">
+                                            <ProfileToggle user={user} />
+                                        </li>
+                                    ) : (
+                                        <>
+                                            <li className="mt-6">
+                                                <Link
+                                                    onClick={() =>
+                                                        setToggleButton(false)
+                                                    }
+                                                    href="/auth/login"
+                                                    className="text-sm hover:underline"
+                                                >
+                                                    LOGIN
+                                                </Link>
+                                            </li>
+                                            <li className="mt-6">
+                                                <Link
+                                                    onClick={() =>
+                                                        setToggleButton(false)
+                                                    }
+                                                    href="/auth/signup"
+                                                    className="px-4 py-2 rounded text-white bg-purple-600 hover:bg-purple-800 text-sm"
+                                                >
+                                                    SIGNUP
+                                                </Link>
+                                            </li>
+                                        </>
+                                    )}
                                 </ul>
                             </div>
                         </div>

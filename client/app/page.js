@@ -1,10 +1,14 @@
+'use client'
 import Link from 'next/link'
+import { useSession } from 'next-auth/react'
 
-export const metadata = {
-    title: 'Vote App | Home',
-    description: 'Created by Nahid Hasan',
-}
+// export const metadata = {
+//     title: 'Vote App | Home',
+//     description: 'Created by Nahid Hasan',
+// }
 export default function Home() {
+    const { data, status } = useSession()
+
     return (
         <div className="mx-auto py-10 md:py-20">
             <h1 className="text-6xl text-center mb-10 font-Russo">

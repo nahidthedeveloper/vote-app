@@ -1,7 +1,7 @@
 import { NextResponse } from 'next/server'
 
 export function middleware(request) {
-    const authenticate = request.cookies.get('next-auth.session-token')?.value
+    // const authenticate = request.cookies.get('next-auth.session-token')?.value
     //
     // if (authenticate && request.nextUrl.pathname === '/login') {
     //     return NextResponse.redirect(new URL('/profile', request.url))
@@ -14,6 +14,6 @@ export function middleware(request) {
     // }
 }
 
-// export const config = {
-//     matcher: ['/profile'],
-// }
+export const config = {
+    matcher: ['/profile'],
+}

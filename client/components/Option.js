@@ -6,9 +6,10 @@ const Option = ({ option }) => {
         <div className="border border-gray-200 rounded dark:border-gray-700 relative h-[50px] grid items-center">
             <div className="z-20 ps-4 flex items-center">
                 <input
-                    id="bordered-radio-1"
+                    id="bordered-radio"
                     type="radio"
                     name="bordered-radio"
+                    value={title}
                     className="w-6 h-6 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
                 />
                 <label
