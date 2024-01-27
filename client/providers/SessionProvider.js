@@ -1,9 +1,7 @@
 'use client'
-import React from 'react'
-import { SessionProvider } from 'next-auth/react'
+import { SessionProvider } from "next-auth/react";
 
-const NextAuthSessionProvider = ({ children }) => {
-    return React.createElement(SessionProvider, null, children)
-}
+export const NextAuthProvider = ({ children }) => {
+    return <SessionProvider>{children}</SessionProvider>;
+};
 
-export default NextAuthSessionProvider
