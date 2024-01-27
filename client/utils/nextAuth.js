@@ -1,8 +1,10 @@
+import NextAuth from 'next-auth'
 import CredentialsProvider from 'next-auth/providers/credentials'
+import { objectToArray } from '@/utils'
 import { httpClient } from '@/utils/api'
-import { objectToArray } from '@/utils/index'
+import axios from 'axios'
 
-export const authOptions = ({
+export default NextAuth({
     providers: [
         CredentialsProvider({
             name: 'credentials',
@@ -13,9 +15,9 @@ export const authOptions = ({
                     password,
                 }
                 try {
-                    const { data } = await httpClient.post(
+                    const { data } = await axios.post(
                         `/auth/login/`,
-                        payload,
+                        payload
                     )
                     return data
                 } catch (error) {
@@ -45,8 +47,8 @@ export const authOptions = ({
         },
     },
     pages: {
-        signIn: 'auth/login/',
-        error: 'auth/login',
+        signIn: '/login',
+        error: '/login',
     },
     secret: process.env.NEXTAUTH_SECRET,
 })
