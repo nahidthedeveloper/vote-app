@@ -1,7 +1,7 @@
 import React from 'react'
 
 export const metadata = {
-    title: 'Vote App | Events',
+    title: 'Vote App | Contact',
     description: 'Created by Nahid Hasan',
 }
 const Page = () => {

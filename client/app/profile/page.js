@@ -1,5 +1,9 @@
 import React from 'react'
 
+export const metadata = {
+    title: 'Vote App | Profile',
+    description: 'Created by Nahid Hasan',
+}
 const Profile = () => {
     return (
         <div className="p-16">
