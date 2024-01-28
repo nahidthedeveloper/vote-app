@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Option = ({ option, q_id, setChoice }) => {
+const Option = ({ option, q_id, register }) => {
     const { id, title } = option
     return (
         <div className="border border-gray-200 rounded dark:border-gray-700 relative h-[50px] grid items-center">
@@ -9,8 +9,7 @@ const Option = ({ option, q_id, setChoice }) => {
                     id="bordered-radio"
                     type="radio"
                     value={id}
-                    name={`choice${q_id}`}
-                    onChange={(e)=>setChoice((e.target.value))}
+                    {...register(`${q_id}`)}
                     className="w-6 h-6 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
                 />
                 <label
