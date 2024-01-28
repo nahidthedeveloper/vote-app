@@ -1,6 +1,5 @@
 'use client'
-import React, { useContext, useEffect, useState } from 'react'
-import { TokenContext } from '@/context/tokenContext'
+import React, { useEffect, useState } from 'react'
 import { httpClient } from '@/utils/api'
 import EventCard from '@/components/EventCard'
 import { toast } from 'react-toastify'
@@ -17,13 +16,17 @@ const EventApi = () => {
                 setLoading(false)
             })
             .catch((err) => {
-                if(err){
+                if (err) {
                     toast.error(err.message)
                 }
             })
     }, [])
 
-    return (
+    if (!events) {
+        setLoading(false)
+        return <p className="text-center mt-8">Events not found. </p>
+    }
+   else return (
         <>
             {loading ? (
                 <p className="text-center mt-8">Loading...</p>

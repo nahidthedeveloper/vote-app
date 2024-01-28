@@ -7,7 +7,7 @@ import Link from 'next/link'
 const Question = ({ question }) => {
     const { options, id } = question
     const [choice, setChoice] = useState(null)
-    const {data ,status } = useSession()
+    const { data, status } = useSession()
 
     const handleSubmit = (e) => {
         e.preventDefault()
