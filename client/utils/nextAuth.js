@@ -35,12 +35,14 @@ export const authOptions = ({
                 return {
                     ...token,
                     accessToken: user?.token,
+                    user_id: user?.user_id
                 }
             }
             return token
         },
         async session({ session, token }) {
             session.user.accessToken = token?.accessToken
+            session.user.user_id = token?.user_id
             return session
         },
     },
