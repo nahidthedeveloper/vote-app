@@ -27,21 +27,19 @@ const EventChildApi = ({ params }) => {
             })
     }, [])
 
-    const {
-        register,
-        handleSubmit,
-        reset,
-    } = useForm({
+    const { register, handleSubmit, reset } = useForm({
         mode: 'onTouched',
     })
 
-
     const onSubmit = (e) => {
         let submittedData = {
-            'submission': [],
+            submission: [],
         }
         Object.entries(e).forEach(([question, answer]) => {
-            submittedData.submission.push({ 'question': question, 'answer': answer })
+            submittedData.submission.push({
+                question: question,
+                answer: answer,
+            })
         })
 
         httpClient
@@ -73,11 +71,16 @@ const EventChildApi = ({ params }) => {
                     <h3 className="mt-5 p-4 bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 rounded-lg shadow">
                         {event.description}
                     </h3>
-                    <p className="mt-5 p-4 bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 rounded-lg shadow">Event Expired at - {expired_at}</p>
+                    <p className="mt-5 p-4 bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 rounded-lg shadow">
+                        Event Expired at - {expired_at}
+                    </p>
                     <form onSubmit={handleSubmit(onSubmit)}>
                         {questions.map((question, index) => (
                             <div className="my-10 grid gap-16" key={index}>
-                                <Question question={question} register={register} />
+                                <Question
+                                    question={question}
+                                    register={register}
+                                />
                             </div>
                         ))}
 
@@ -99,7 +102,9 @@ const EventChildApi = ({ params }) => {
                                     </Link>
                                 )}
                             </div>
-                        ) : ''}
+                        ) : (
+                            ''
+                        )}
                     </form>
                 </div>
             )}

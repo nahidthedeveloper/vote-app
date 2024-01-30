@@ -36,8 +36,7 @@ const Navbar = () => {
 
     return (
         <nav className="bg-white dark:bg-gray-900 sticky top-0 z-50 border-b border-gray-200 dark:border-gray-700">
-            <div
-                className="px-4 md:px-0 py-8 flex items-center justify-between dark:text-white text-black max-w-[1216px] w-full m-auto">
+            <div className="px-4 md:px-0 py-8 flex items-center justify-between dark:text-white text-black max-w-[1216px] w-full m-auto">
                 <div>
                     <Link href="/" className="font-Russo text-2xl">
                         Vote App
@@ -59,7 +58,7 @@ const Navbar = () => {
                             <li className="ml-8">
                                 <ThemeSwitcher />
                             </li>
-                            {(status === 'authenticated' && user) ? (
+                            {status === 'authenticated' && user ? (
                                 <li className="ml-16">
                                     <ProfileToggle user={user} />
                                 </li>

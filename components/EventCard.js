@@ -5,14 +5,11 @@ import { ArrowRightIcon } from '@heroicons/react/24/solid'
 const EventCard = ({ event }) => {
     const { id, title, description, expired_at } = event
 
-    // Create a Date object from the UTC time string
-    const utcDate = new Date(expired_at);
-
-// Get the local time using the local time zone offset
-    const localDate = new Date(utcDate.getTime() - (utcDate.getTimezoneOffset() * 60000));
-
-// Format the local date as a string
-    const time = localDate.toLocaleString(); // Adjust options based on your requirements
+    const utcDate = new Date(expired_at)
+    const localDate = new Date(
+        utcDate.getTime() - utcDate.getTimezoneOffset() * 60000
+    )
+    const time = localDate.toLocaleString()
 
     return (
         <div className="max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 min-h-[242px] relative z-0 min-w-[380px] w-full">

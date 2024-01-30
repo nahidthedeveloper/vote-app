@@ -35,7 +35,7 @@ const SignupForm = () => {
                 const { data } = err.response
                 if (data) {
                     const { data: errors } = err.response
-                    if(errors){
+                    if (errors) {
                         if ('non_field_errors' in errors) {
                             toast.error(errors.non_field_errors[0])
                         }

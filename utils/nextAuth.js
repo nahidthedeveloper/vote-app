@@ -2,7 +2,7 @@ import CredentialsProvider from 'next-auth/providers/credentials'
 import { httpClient } from '@/utils/api'
 import { objectToArray } from '@/utils/index'
 
-export const authOptions = ({
+export const authOptions = {
     providers: [
         CredentialsProvider({
             name: 'credentials',
@@ -15,7 +15,7 @@ export const authOptions = ({
                 try {
                     const { data } = await httpClient.post(
                         `/auth/login/`,
-                        payload,
+                        payload
                     )
                     return data
                 } catch (error) {
@@ -34,7 +34,7 @@ export const authOptions = ({
                 return {
                     ...token,
                     accessToken: user?.token,
-                    user_id: user?.user_id
+                    user_id: user?.user_id,
                 }
             }
             return token
@@ -50,4 +50,4 @@ export const authOptions = ({
         error: 'auth/login',
     },
     secret: process.env.NEXTAUTH_SECRET,
-})
+}
