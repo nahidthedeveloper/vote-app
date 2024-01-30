@@ -108,7 +108,7 @@ const Footer = () => {
                     </span>
                     <div className="flex mt-4 sm:justify-center sm:mt-0">
                         <Link
-                            href="#"
+                            href="https://www.facebook.com/nahidinf/"
                             target="_blank"
                             className="text-gray-500 hover:text-gray-900 dark:hover:text-white"
                         >
@@ -124,7 +124,7 @@ const Footer = () => {
                             <span className="sr-only">Facebook page</span>
                         </Link>
                         <Link
-                            href="#"
+                            href="https://discord.gg/NpAQ5MvE"
                             target="_blank"
                             className="text-gray-500 hover:text-gray-900 dark:hover:text-white ms-5"
                         >
@@ -140,7 +140,7 @@ const Footer = () => {
                             <span className="sr-only">Discord community</span>
                         </Link>
                         <Link
-                            href="#"
+                            href="https://twitter.com/nahidinf"
                             target="_blank"
                             className="text-gray-500 hover:text-gray-900 dark:hover:text-white ms-5"
                         >
@@ -156,7 +156,7 @@ const Footer = () => {
                             <span className="sr-only">Twitter page</span>
                         </Link>
                         <Link
-                            href="#"
+                            href="https://github.com/nahid-git"
                             target="_blank"
                             className="text-gray-500 hover:text-gray-900 dark:hover:text-white ms-5"
                         >
