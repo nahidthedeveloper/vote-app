@@ -3,7 +3,17 @@ import Link from 'next/link'
 import { ArrowRightIcon } from '@heroicons/react/24/solid'
 
 const EventCard = ({ event }) => {
-    const { id, title, description } = event
+    const { id, title, description, expired_at } = event
+
+    // Create a Date object from the UTC time string
+    const utcDate = new Date(expired_at);
+
+// Get the local time using the local time zone offset
+    const localDate = new Date(utcDate.getTime() - (utcDate.getTimezoneOffset() * 60000));
+
+// Format the local date as a string
+    const time = localDate.toLocaleString(); // Adjust options based on your requirements
+
     return (
         <div className="max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 min-h-[242px] relative z-0 min-w-[380px] w-full">
             <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white line-clamp-2">
@@ -19,6 +29,7 @@ const EventCard = ({ event }) => {
                 Read more
                 <ArrowRightIcon className="h-4 w-4 ml-1" />
             </Link>
+            <p>Event Expire at - {time}</p>
         </div>
     )
 }
