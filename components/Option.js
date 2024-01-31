@@ -9,7 +9,7 @@ const Option = ({ option, q_id, register }) => {
                     id="bordered-radio"
                     type="radio"
                     value={id}
-                    {...register(`${q_id}`)}
+                    {...register(`${q_id}`, { required: 'Email is required' })}
                     className="w-6 h-6 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
                 />
                 <label
