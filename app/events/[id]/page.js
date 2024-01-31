@@ -1,5 +1,5 @@
 import React from 'react'
-import EventChildApi from '@/app/api/EventChildApi'
+import EventChildApi from '@/components/events/views/EventChildApi'
 
 export const metadata = {
     title: 'Vote App | Event',
