@@ -12,6 +12,7 @@ const EventChildApi = ({ params }) => {
     const [loading, setLoading] = useState(true)
     const [event, setEvent] = useState(null)
     const { data, status } = useSession()
+    const [submit, setSubmit] = useState(false)
 
     useEffect(() => {
         httpClient
@@ -27,7 +28,7 @@ const EventChildApi = ({ params }) => {
             }).finally(() => {
             setLoading(false)
         })
-    }, [params])
+    }, [params, submit])
 
     const { register, handleSubmit, reset } = useForm({
         mode: 'onTouched',
@@ -48,6 +49,7 @@ const EventChildApi = ({ params }) => {
             .post(`/events/${params}/submit_vote/`, submittedData)
             .then((response) => {
                 toast.success(response.data.message)
+                setSubmit(true)
                 reset()
             })
             .catch((er) => {

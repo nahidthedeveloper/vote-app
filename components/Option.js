@@ -1,7 +1,9 @@
 import React from 'react'
 
-const Option = ({ option, q_id, register }) => {
-    const { id, title } = option
+const Option = ({ option, q_id, register, question_total_votes }) => {
+    const { id, title, option_total_votes } = option
+    let calculate = (option_total_votes / question_total_votes) * 100
+    let percent = calculate.toFixed(2)
     return (
         <div className="border border-gray-200 rounded dark:border-gray-700 relative h-[50px] grid items-center">
             <div className="z-20 ps-4 flex items-center">
@@ -21,9 +23,9 @@ const Option = ({ option, q_id, register }) => {
             </div>
             <div
                 className="absolute bg-blue-600 opacity-20 dark:opacity-40 top-0 h-full z-25"
-                style={{ width: '50%' }}
+                style={{ width: `${percent}%` }}
             ></div>
-            <span className="absolute right-2 text-sm">50%</span>
+            <span className="absolute right-2 text-sm">{percent} %</span>
         </div>
     )
 }
