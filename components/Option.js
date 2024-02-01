@@ -25,7 +25,7 @@ const Option = ({ option, q_id, register, question_total_votes }) => {
                 className="absolute bg-blue-600 opacity-20 dark:opacity-40 top-0 h-full z-25"
                 style={{ width: `${percent}%` }}
             ></div>
-            <span className="absolute right-2 text-sm">{percent} %</span>
+            <span className="absolute right-2 text-sm">{percent ? percent : '0'} %</span>
         </div>
     )
 }
