@@ -49,7 +49,7 @@ const EventChildApi = ({ params }) => {
             .post(`/events/${params}/submit_vote/`, submittedData)
             .then((response) => {
                 toast.success(response.data.message)
-                setSubmit(true)
+                setSubmit(!submit)
                 reset()
             })
             .catch((er) => {
