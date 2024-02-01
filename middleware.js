@@ -16,7 +16,7 @@ export function middleware(request) {
         return NextResponse.redirect(new URL('/profile', request.url))
     }
     if (!authenticate && request.nextUrl.pathname === '/profile') {
-        return NextResponse.redirect(new URL('/login', request.url))
+        return NextResponse.redirect(new URL('/auth/login', request.url))
     }
 }
 
