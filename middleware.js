@@ -2,24 +2,28 @@ import { NextResponse } from 'next/server'
 
 export function middleware(request) {
     const authenticate = request.cookies.get('next-auth.session-token')?.value
+    const { nextUrl, url } = request
 
-    if (authenticate && request.nextUrl.pathname === '/auth/login') {
-        return NextResponse.redirect(new URL('/profile', request.url))
-    }
-    if (authenticate && request.nextUrl.pathname === '/auth/signup') {
-        return NextResponse.redirect(new URL('/profile', request.url))
-    }
-    if (authenticate && request.nextUrl.pathname === '/auth/forgot_password') {
-        return NextResponse.redirect(new URL('/profile', request.url))
-    }
-    if (authenticate && request.nextUrl.pathname === '/auth/reset_password') {
-        return NextResponse.redirect(new URL('/profile', request.url))
-    }
-    if (!authenticate && request.nextUrl.pathname === '/profile') {
-        return NextResponse.redirect(new URL('/auth/login', request.url))
+    const loginUserCanNotAccess = ['/auth/login', '/auth/signup', '/auth/reset_password', '/auth/forgot_password']
+    const UnAuthorizeUserCanNotAccess = ['/profile']
+
+    if (authenticate) {
+        if (loginUserCanNotAccess.includes(nextUrl.pathname)) {
+            return NextResponse.redirect(new URL('/profile', url))
+        }
+    } else {
+        if (UnAuthorizeUserCanNotAccess.includes(nextUrl.pathname)) {
+            return NextResponse.redirect(new URL('/auth/login', url))
+        }
     }
 }
 
+
+//
+// export function middleware(request) {
+//     return NextResponse.redirect(new URL('/', request.url))
+// }
+//
 // export const config = {
 //     matcher: ['/profile'],
 // }
