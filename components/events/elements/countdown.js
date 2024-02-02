@@ -9,8 +9,6 @@ const Countdown = ({ time }) => {
     const targetTime = moment(formattedTime, 'MMMM Do YYYY, h:mm:ss a')
     const [remainingTime, setRemainingTime] = useState(calculateRemainingTime()) // minus value at initial render
 
-    console.log(calculateRemainingTime())
-
     function calculateRemainingTime() {
         return moment.duration(targetTime.diff(moment()))
     }

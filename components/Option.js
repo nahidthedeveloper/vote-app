@@ -1,9 +1,12 @@
 import React from 'react'
 
-const Option = ({ option, q_id, register, question_total_votes }) => {
-    const { id, title, option_total_votes } = option
-    let calculate = (option_total_votes / question_total_votes) * 100
+const Option = ({ option, q_id, register, question_total_votes, option_votes_count }) => {
+    const { id, title } = option
+
+    let resultValue = option_votes_count.find(obj => obj[id.toString()])?.[id.toString()] ?? undefined;
+    let calculate = (parseInt(resultValue) / parseInt(question_total_votes)) * 100
     let percent = calculate.toFixed(2)
+
     return (
         <div className="border border-gray-200 rounded dark:border-gray-700 relative h-[50px] grid items-center">
             <div className="z-20 ps-4 flex items-center">
@@ -23,9 +26,9 @@ const Option = ({ option, q_id, register, question_total_votes }) => {
             </div>
             <div
                 className="absolute bg-blue-600 opacity-20 dark:opacity-40 top-0 h-full z-25"
-                style={{ width: `${percent}%` }}
+                style={{ width: `${parseInt(percent)}%` }}
             ></div>
-            <span className="absolute right-2 text-sm">{percent ? percent : '0'} %</span>
+            <span className="absolute right-2 text-sm">{parseInt(percent) ? percent : '0'} %</span>
         </div>
     )
 }
