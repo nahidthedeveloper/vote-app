@@ -43,7 +43,7 @@ const LoginForm = () => {
                 }
             } else {
                 toast.success('Login Successful')
-                router.push(callbackUrl ?? '/profile')
+                router.push(callbackUrl ? callbackUrl : '/profile')
             }
         })
     }

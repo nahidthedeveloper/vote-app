@@ -1,5 +1,6 @@
 import React from 'react'
 import LoginForm from '@/components/forms/loginForm'
+import { useSearchParams } from 'next/navigation'
 
 export const metadata = {
     title: 'Vote App | Login',

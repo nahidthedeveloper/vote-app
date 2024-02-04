@@ -19,15 +19,15 @@ const EventChildApi = ({ params }) => {
             .get(`/events/${params}/`)
             .then((response) => {
                 setEvent(response.data)
-
             })
             .catch((err) => {
                 if (err) {
                     toast.error(err.message)
                 }
-            }).finally(() => {
-            setLoading(false)
-        })
+            })
+            .finally(() => {
+                setLoading(false)
+            })
     }, [params, submit])
 
     const { register, handleSubmit, reset } = useForm({
@@ -65,7 +65,6 @@ const EventChildApi = ({ params }) => {
             })
     }
 
-
     return (
         <>
             {loading ? (
@@ -76,13 +75,18 @@ const EventChildApi = ({ params }) => {
                         <Countdown time={event.expired_at} />
 
                         <div className="mt-8">
-                            <h1 className="text-5xl font-Russo">{event.title}</h1>
+                            <h1 className="text-5xl font-Russo">
+                                {event.title}
+                            </h1>
                             <h3 className="mt-5 p-4 bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 rounded-lg shadow">
                                 {event.description}
                             </h3>
                             <form onSubmit={handleSubmit(onSubmit)}>
                                 {event.questions.map((question, index) => (
-                                    <div className="my-10 grid gap-16" key={index}>
+                                    <div
+                                        className="my-10 grid gap-16"
+                                        key={index}
+                                    >
                                         <Question
                                             question={question}
                                             register={register}
@@ -102,7 +106,7 @@ const EventChildApi = ({ params }) => {
                                         ) : (
                                             <Link
                                                 className="px-4 py-2 rounded text-white bg-purple-600 hover:bg-purple-800 text-sm"
-                                                href="/auth/login/"
+                                                href={`/auth/login?callbackUrl=/events/${params}/`}
                                             >
                                                 Login to give Vote
                                             </Link>
@@ -113,11 +117,7 @@ const EventChildApi = ({ params }) => {
                                 )}
                             </form>
                         </div>
-
-
                     </div>
-
-
                 )
             )}
         </>
